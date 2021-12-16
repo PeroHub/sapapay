@@ -8,9 +8,13 @@ import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+// import Grid from '@mui/material/Grid';
+import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
+import { Link } from "react-router-dom"
 
 // import sapapay from '../images/sapapay.svg'
+import Vector from '../images/Vector.png'
 
 export default function Signup() {
 
@@ -19,129 +23,163 @@ export default function Signup() {
     const handleSex = (event) => {
         setSex(event.target.value)
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        // eslint-disable-next-line no-console
+        console.log({
+          email: data.get('email'),
+          password: data.get('password'),
+        });
+      };
+
     return (
-        <Container component="main" sx={{height: "85vh"}} maxWidth="sm">
-            <Box sx={{border: "1px solid red", p: 2, height: "inherit"}}>
-                <Typography sx={{textAlign: "center", background: "#1C47E0", p: 2, fontWeight: "bold", fontSize: "24px", color: "#fff"}}>Sign Up</Typography>
-                <Box sx={{display: "flex", alignItems:"center", border: "1px solid red"}} component="form">
-                    <Typography>Username</Typography>
-                    <TextField 
-                    fullWidth
-                     required
-                     id='email'
-                     name="email"
-                     type="text"
-                    />
-                </Box>
-               
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>Password</Typography>
-                    <TextField 
-                    fullWidth
-                     required
-                     id='password'
-                     name="password"
-                     type="password"
+            <Container component="main" sx={{minHeight: "85vh"}} maxWidth="sm">
+            <Box sx={{border: "1px solid #d3d3d3", p: 2, height: "inherit"}}>
+                <Typography sx={{textAlign: "center", background: "#1C47E0", p: 2, fontWeight: "bold", fontSize: "24px", color: "#fff"}}>Register your business</Typography>
+                
+                <Box  component="form" onSubmit={handleSubmit}>
+                    <Box sx={{display: "flex", alignItems:"center"}}>
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                            <Typography sx={{ width: "50%"}}>Username</Typography>
+                            <TextField 
+                            sx={{width: '100%'}}
+                            required
+                            id='username'
+                            name="username"
+                            type="text"
+                            />
+                        </FormControl>
+                    </Box>
+
+                    <Box sx={{display: "flex", alignItems:"center"}}>
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                            <Typography sx={{ width: "50%"}}>Password</Typography>
+                            <TextField 
+                            sx={{width: '100%'}}
+                            required
+                            id='password'
+                            name="password"
+                            type="password"
+                            autoComplete="current-password"
+                            />
+                        </FormControl>
+                    </Box>
+
+
+                    <Box sx={{display: "flex", alignItems:"center"}}>
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                            <Typography sx={{ width: "50%"}}>Full Name</Typography>
+                            <TextField 
+                            sx={{width: '100%'}}
+                            required
+                            id='fullname'
+                            name="fullname"
+                            type="text"
+                            />
+                        </FormControl>
+                    </Box>
+
+
+                    <Box sx={{display: "flex", alignItems:"center"}}>
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                            <Typography sx={{ width: "50%"}}>Username</Typography>
+                            <TextField 
+                            sx={{width: '100%'}}
+                            required
+                            id='email'
+                            name="email"
+                            type="text"
+                            />
+                        </FormControl>
+                    </Box>
+
+                    <Box sx={{display: "flex", alignItems:"center"}}>
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                            <Typography sx={{ width: "50%"}}>Email</Typography>
+                            <TextField 
+                            sx={{width: '100%'}}
+                            required
+                            id='email'
+                            name="email"
+                            type="email"
+                            autoComplete="email"
+                            autoFocus
+                            />
+                        </FormControl>
+                    </Box>
+
+                    <Box sx={{display: "flex", alignItems:"center"}} component="form">
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                        <Typography>Sex</Typography>
+                            <Select
+                            sx={{width: '50%'}}
+                            value={sex}
+                            onChange={handleSex}
+                            >
+                            <MenuItem value={10}>MALE</MenuItem>
+                            <MenuItem value={20}>FEMALE</MenuItem>
+                        
+                            </Select>
+
+                        </FormControl>
                     
-                    />
-                </Box>
+                    </Box>
 
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>Full Name</Typography>
-                    <TextField 
-                    fullWidth
-                     required
-                     id='fullname'
-                     name="fullname"
-                     type="text"
-                     
-                    />
-                </Box>
 
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>Email</Typography>
-                    <TextField 
-                    fullWidth
-                     required
-                     id='email'
-                     name="email"
-                     type="text"
-                    />
-                </Box>
+                    <Box sx={{display: "flex", alignItems:"center"}}>
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                            <Typography sx={{ width: "50%"}}>Business/Brand Name</Typography>
+                            <TextField 
+                            sx={{width: '100%'}}
+                            required
+                            id='brand'
+                            name="brand"
+                            type="text"
+                            />
+                        </FormControl>
+                    </Box>
 
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>Username</Typography>
-                    <TextField 
-                    fullWidth
-                     required
-                     id='email'
-                     name="email"
-                     
-                    />
-                </Box>
 
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>Sex</Typography>
-                    <Select
-                    fullWidth
-                        value={sex}
-                        label="Age"
-                        onChange={handleSex}
+                    <Box sx={{display: "flex", alignItems:"center"}}>
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                            <Typography sx={{width: "50%"}}>Business/Brand page link(optional)</Typography>
+                            <TextField 
+                            sx={{width: '100%'}}
+                            id='email'
+                            name="email"
+                            type="url"
+                            />
+                        </FormControl>
+                    </Box>
+
+                    <Box sx={{display: "flex", alignItems:"center"}}>
+                        <FormControl sx={{m: 1, width: "100%"}}>
+                            <Typography sx={{ width: "50%"}}>Business Image(optional)</Typography>
+                            <TextField 
+                            sx={{width: '100%'}}
+                            id='image'
+                            name="image"
+                            type="text"
+                            />
+                        </FormControl>
+                    </Box>
+              
+                    <Link to="/success" style={{textDecoration: 'none' }}>
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
                         >
-                        <MenuItem value={10}>MALE</MenuItem>
-                        <MenuItem value={20}>FEMALE</MenuItem>
-                      
-                    </Select>
+                            Continue
+                    </Button>
+                    </Link>
+                   
                 </Box>
-
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>Business/Brand Name</Typography>
-                    <TextField 
-                     required
-                     id='brand'
-                     name="brand"
-                     type="text"
-                    />
-                </Box>
-
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>Business/Brand Page Link</Typography>
-                    <TextField 
-                     required
-                     id='brandlink'
-                     name="brandlink"
-                     type="url"
-                     
-                    />
-                </Box>
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>State/City</Typography>
-                    <TextField 
-                     required
-                     id='state'
-                     name="state"
-                     type="text"
-                     
-                    />
-                </Box>
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
-                    <Typography>Brand Image</Typography>
-                    <TextField 
-                     required
-                     id='image'
-                     name="image"
-                     type="image"
-                     
-                    />
-                </Box>
-                <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                >
-                    Continue
-                </Button>
+ 
             </Box>
         </Container>
+        
     )
 }
