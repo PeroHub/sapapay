@@ -1,16 +1,16 @@
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import Grid from '@mui/material/Grid';
+// import Stack from '@mui/material/Stack';
+// import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 
-import sapapay from '../images/sapapay.svg'
+// import sapapay from '../images/sapapay.svg'
 
 export default function Signup() {
 
@@ -26,6 +26,7 @@ export default function Signup() {
                 <Box sx={{display: "flex", alignItems:"center"}} component="form">
                     <Typography>Username</Typography>
                     <TextField 
+                    fullWidth
                      required
                      id='email'
                      name="email"
@@ -36,6 +37,7 @@ export default function Signup() {
                 <Box sx={{display: "flex", alignItems:"center"}} component="form">
                     <Typography>Password</Typography>
                     <TextField 
+                    fullWidth
                      required
                      id='password'
                      name="password"
@@ -47,6 +49,7 @@ export default function Signup() {
                 <Box sx={{display: "flex", alignItems:"center"}} component="form">
                     <Typography>Full Name</Typography>
                     <TextField 
+                    fullWidth
                      required
                      id='fullname'
                      name="fullname"
@@ -58,6 +61,7 @@ export default function Signup() {
                 <Box sx={{display: "flex", alignItems:"center"}} component="form">
                     <Typography>Email</Typography>
                     <TextField 
+                    fullWidth
                      required
                      id='email'
                      name="email"
@@ -68,6 +72,7 @@ export default function Signup() {
                 <Box sx={{display: "flex", alignItems:"center"}} component="form">
                     <Typography>Username</Typography>
                     <TextField 
+                    fullWidth
                      required
                      id='email'
                      name="email"
@@ -78,6 +83,7 @@ export default function Signup() {
                 <Box sx={{display: "flex", alignItems:"center"}} component="form">
                     <Typography>Sex</Typography>
                     <Select
+                    fullWidth
                         value={sex}
                         label="Age"
                         onChange={handleSex}
