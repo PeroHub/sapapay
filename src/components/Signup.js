@@ -23,7 +23,7 @@ export default function Signup() {
         <Container component="main" sx={{height: "85vh"}} maxWidth="sm">
             <Box sx={{border: "1px solid red", p: 2, height: "inherit"}}>
                 <Typography sx={{textAlign: "center", background: "#1C47E0", p: 2, fontWeight: "bold", fontSize: "24px", color: "#fff"}}>Sign Up</Typography>
-                <Box sx={{display: "flex", alignItems:"center"}} component="form">
+                <Box sx={{display: "flex", alignItems:"center", border: "1px solid red"}} component="form">
                     <Typography>Username</Typography>
                     <TextField 
                     fullWidth
