@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { Link, Outlet } from "react-router-dom"
+import { Link} from "react-router-dom"
 
 import family from '../images/family.png'
 
@@ -18,7 +18,7 @@ export default function Change() {
                             <Typography sx={{fontSize: {xs: "18px", sx: "20px", md: "24px"}, textTransform: "capitalize", fontWeight: "bold", mt: 2, mb: {xs: 4}}}>GET your business seen by <br /> investors, partners and Sponsors</Typography>
                             <Stack direction="row" spacing={2}>
                                 <Button variant="outlined">Login</Button>
-                                <Link to="" style={{ textDecoration: 'none' }}>
+                                <Link to="/signup" style={{ textDecoration: 'none' }}>
                                     <Button variant="contained">Sign Up</Button>
                                 </Link>
                                 

@@ -1,14 +1,14 @@
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
+
 import Grid from '@mui/material/Grid';
-import { Link } from "react-router-dom"
+
 import CircularProgress from '@mui/material/CircularProgress';
 import { useState, useEffect } from 'react';
 
-import sapapay from '../images/sapapay.svg'
+
 import Countdown from './Countdown'
 import Change from './Change';
 
@@ -17,7 +17,7 @@ export default function Countdowntimer() {
 
     
    
-    let future = Date.parse("January 30, 2022 01:30:00")
+    
 
     const [time, setTime] = useState([])
     console.log("this is" + time)
@@ -25,6 +25,7 @@ export default function Countdowntimer() {
 
     useEffect(() => {
         setInterval(() => {
+            let future = Date.parse("January 30, 2022 01:30:00")
             let now = new Date()
             let diff = future - now
 
@@ -43,7 +44,8 @@ export default function Countdowntimer() {
 
             
         }, 1000)
-    }, [])
+        
+    }, []) 
     
     
 
