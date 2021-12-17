@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import Grid from '@mui/material/Grid';
+import enter from  '../images/enter.jpg'
 
 import CircularProgress from '@mui/material/CircularProgress';
 import { useState, useEffect } from 'react';
@@ -53,19 +54,20 @@ export default function Countdowntimer() {
         
 
     let firstBox = {
-        background: "#1C47E0",
+        background: "",
         color: "#FFF"
     }
 
     let secondBox = {
-        background: "#000",
+        background: "",
         color: "#fff"
     }
     return (
-        <Container component="main" sx={{ height: "100vh"}}>
+        <div style={{background: "rgba(0, 0, 0, 0.9)", marginTop: '10px', height: "100vh", backgroundImage: `url(${enter})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundBlendMode: "multiply", display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <Container component="main" sx={{ mt: -8}}>
             
             {time.length < 1 ? <Box sx={{display: 'flex', alignItems: "center", justifyContent: "center", mt: 8}}><CircularProgress /></Box> : <Box>
-                <Typography sx={{textAlign: 'center', color: "#BEBEBE", fontWeight: "bold",mt:4}}>COUNTDOWN DAYS TO LAUNCHING</Typography>
+                <Typography sx={{textAlign: 'center', color: "#fff", fontWeight: "bold",mt:4}}>COUNTDOWN DAYS TO LAUNCHING</Typography>
                 <Grid container rowSpacing={1} align="center">
                     <Grid item xs={6} md={3}>
                         <Countdown {...firstBox} Day={`${time[0]} days`} />
@@ -87,5 +89,7 @@ export default function Countdowntimer() {
   
     
         </Container>
+        </div>
+        
     )
 }

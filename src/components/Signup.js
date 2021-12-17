@@ -14,7 +14,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom"
 
 // import sapapay from '../images/sapapay.svg'
-import Vector from '../images/Vector.png'
+// import Vector from '../images/Vector.png'
 
 export default function Signup() {
 
@@ -166,7 +166,7 @@ export default function Signup() {
                         </FormControl>
                     </Box>
               
-                    <Link to="/success" style={{textDecoration: 'none' }}>
+                    <Link to="" style={{textDecoration: 'none' }}>
                     <Button
                         type="submit"
                         fullWidth
