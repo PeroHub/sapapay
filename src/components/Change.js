@@ -17,7 +17,7 @@ export default function Change() {
                             <Typography sx={{fontSize: "20px", color: "#fff"}}>--- Changing the way you earn</Typography>
                             <Typography sx={{fontSize: {xs: "18px", sx: "20px", md: "24px"}, color: "#fff", textTransform: "capitalize", fontWeight: "bold", mt: 2, mb: {xs: 4}}}>GET your business seen by <br /> investors, partners and Sponsors</Typography>
                             <Stack direction="row" spacing={2}>
-                                <Button  style={{border: " 1px solid #fff", color: "#fff"}}>Login</Button>
+                                <Button  style={{border: " 1px solid #fff", color: "#fff", border: "1px solid #FF4500"}}>Login</Button>
                                 <Link to="/signup" style={{ textDecoration: 'none' }}>
                                     <Button style={{background: "#FF4500", color: "#fff"}}>Sign Up</Button>
                                 </Link>
