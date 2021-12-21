@@ -19,7 +19,7 @@ function App() {
        <Link to="/" style={{ textDecoration: 'none' }}>
                 <Stack direction="row" sx={{justifyContent: 'center', alignItems: "center", position: "relative", right: {xs : '30%', md: "35%"}, mt: 4}} spacing={1}>
                     <Avatar alt="logo" src={sapapay} />
-                    <Typography>Sapapay</Typography>
+                    <Typography sx={{color: "#FF4500"}}>Sapapay</Typography>
                 </Stack>
             </Link>
        <Outlet />

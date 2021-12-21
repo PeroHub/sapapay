@@ -9,6 +9,9 @@ import {
   Route
 } from "react-router-dom"
 
+import { ThemeProvider } from "@mui/system"
+import { theme } from './components/theme'
+
 import Signup from './components/Signup'
 import Countdowntimer from './components/Countdowntimer'
 import Homepage from './components/Homepage'
@@ -17,16 +20,19 @@ import Signupsuccess from './components/Signupsuccess'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    <ThemeProvider theme={theme}>
       <Routes>
-        <Route exact path="/" element={<App />}>
-          <Route path="" element={<Homepage />} />
-          <Route path="count_down" element={<Countdowntimer />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="success" element={<Signupsuccess />} />
-        </Route>          
-        
+          <Route exact path="/" element={<App />}>
+            <Route path="" element={<Homepage />} />
+            <Route path="count_down" element={<Countdowntimer />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="success" element={<Signupsuccess />} />
+          </Route>          
+          
 
-      </Routes>
+        </Routes>
+    </ThemeProvider>
+     
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
