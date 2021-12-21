@@ -12,19 +12,12 @@ import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
 import { Link } from "react-router-dom"
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { green, orange } from '@mui/material/colors';
+
 
 // import sapapay from '../images/sapapay.svg'
 // import Vector from '../images/Vector.png'
 
-const outerTheme = createTheme({
-  palette: {
-    primary: {
-      main: orange[500],
-    },
-  },
-});
+
 
 export default function Signup() {
 
@@ -47,7 +40,7 @@ export default function Signup() {
     return (
             <Container component="main" sx={{minHeight: "85vh"}} maxWidth="sm">
             <Box sx={{border: "1px solid #d3d3d3", p: 2, height: "inherit"}}>
-                <Typography sx={{textAlign: "center", background: "#FF4500", p: 2, fontWeight: "bold", fontSize: "24px", color: "#fff"}}>Register your business</Typography>
+                <Typography sx={{textAlign: "center", background: "#FF4500", p: 2, fontWeight: "bold", fontSize: "24px", color: "#fff"}}>Sign Up</Typography>
                 
                 <Box  component="form" onSubmit={handleSubmit}>
                     <Box sx={{display: "flex", alignItems:"center"}}>
