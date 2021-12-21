@@ -36,6 +36,11 @@ export default function Signupsuccess () {
   //     setCopySuccess('Failed to copy!');
   //   }
   // };
+
+  let update = <div style={{display: "flex", marginTop: "15px", marginBottom: "15px"}}>
+       <Avatar src={copy} />
+       <p style={{fontWeight: "bold"}}>Click to copy</p>
+  </div>
     
     return (
         <Container sx={{mt: 8}}>
@@ -43,13 +48,14 @@ export default function Signupsuccess () {
                 <Avatar src={success} />  
                 <Typography sx={{fontSize: {xs: "1.5rem", md: "2rem"}, color: "#1C47E0", mt: 2, mb: 2}}>Congratulations On Signing Up</Typography> 
                 <Typography sx={{fontWeight: "500", fontSize: "1.2rem"}}>Your business page link is still being reviewed</Typography>
-                <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <Box sx={{display: "flex", justifyContent: "center", mt: 4, alignItems: "center", width: {xs: "100%", sm: "50%", md: "40%"}}}>
                 <Grid container >
-                    <Grid item>
-                    <Box sx={{display: "flex", flexDirection: {xs: "column", md: "row"}, justifyContent: "center", alignItems: "center", p: 2}}>
+                    <Grid item xs={12} md={12}>
+                    <Box sx={{ justifyContent: "center", alignItems: "center"}}>
                     <Typography  sx={{color: "#9ca3af"}}>Refer your friends</Typography>
                     <TextField 
-                         sx={{ p: 2}} 
+                         
+                         fullWidth
                         style={{borderRadius: "5px"}} 
                         value={link} 
                         onChange={handleLink} />
@@ -57,11 +63,11 @@ export default function Signupsuccess () {
                     
                 </Box>
                     </Grid>
-                    <Grid item>
-                    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", height: "120px", width: {xs: "850%", sm: "0%", md: "0%"}}}>
+                    <Grid item xs={12} md={12} >
+                    <Box sx={{display: "flex", width: "100%", justifyContent: {xs: "center", sm: "center", md: "center"}, alignItems: "center"}}>
                         <CopyToClipboard text={link}
                             onCopy={() => setCopySuccess(true)}>
-                            <Avatar src={copy} />
+                           {update}
                             
                         </CopyToClipboard>
                     </Box>
@@ -69,17 +75,25 @@ export default function Signupsuccess () {
                 </Grid>
                 </Box>
 
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={2} >
                     <Avatar src={telegram} alt="telegram" />
+                    <a
+                    className="what-move"
+                    href="whatsapp://send?text=Hello World!&phone=+2347042040580"
+                    >
                     <Avatar src={whatsapp} alt="whatsapp"/>
+                    </a>
+                    
+                  
                 </Stack>
+                
 
                 <Button variant="contained" sx={{mt: 2}}>View Listing</Button>
                 
                 
 
                 
-        {copySuccess ? <span style={{color: 'red'}}>Copied</span> : null}
+        {copySuccess ? <span style={{color: 'red', marginTop: "50px"}}>Copied</span> : null}
             </Box> 
         </Container>
     )
