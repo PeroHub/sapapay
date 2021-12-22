@@ -15,8 +15,7 @@ export default function Change() {
                     <Grid item xs={12} md={6} sx={{mt: {xs: 4}}}>
                         <Box sx={{display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                         <Typography sx={{fontSize: {xs: "18px", sx: "20px", md: "24px"}, color: "#fff", textTransform: "capitalize", fontWeight: "bold", mt: 2, mb: {xs: 4}}}>GET your business seen by <br /> investors, partners and Sponsors</Typography>
-                            <Typography sx={{fontSize: "20px", color: "#fff", mb: 4}}>--- Sapapay helps to list your business and gives Users a viral Online Visibility. 
-For Experienced Users, the Building of a simple advertising model takes Less than an hour In the case of positioning of the website, the effects are not so fast. They are visible even after a few weeks.</Typography>
+                            <Typography sx={{fontSize: "20px", color: "#fff", mb: 4}}>--- Sapapay helps to list your business and gives Users a viral Online Visibility. For Experienced Users, the Building of a simple advertising model takes Less than an hour.</Typography>
                             
                             <Stack direction="row" spacing={2}>
                                 <Button  style={{ color: "#fff", border: "1px solid #FF4500"}}>Login</Button>

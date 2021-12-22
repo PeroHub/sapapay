@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
 import { Link } from "react-router-dom"
+// import CircularProgress from '@mui/material/CircularProgress';
 
 
 // import sapapay from '../images/sapapay.svg'
@@ -27,10 +28,13 @@ export default function Signup() {
         setSex(event.target.value)
     }
 
+    // const  [value, setValue] = useState(null)
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         // eslint-disable-next-line no-console
+        // setValue(data)
         console.log({
           email: data.get('email'),
           password: data.get('password'),
@@ -38,7 +42,7 @@ export default function Signup() {
       };
 
     return (
-            <Container component="main" sx={{minHeight: "85vh"}} maxWidth="sm">
+            <Container component="main" sx={{minHeight: "85vh", mt: 4}} maxWidth="sm">
             <Box sx={{border: "1px solid #d3d3d3", p: 2, height: "inherit"}}>
                 <Typography sx={{textAlign: "center", background: "#FF4500", p: 2, fontWeight: "bold", fontSize: "24px", color: "#fff"}}>Sign Up</Typography>
                 
@@ -169,16 +173,22 @@ export default function Signup() {
                         </FormControl>
                     </Box> */}
               
-                    <Link to="/success" style={{textDecoration: 'none' }}>
+                    <Link to="/success" style={{textDecoration: "none"}}>
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
-                        sx={{background: "#FF4500", color: "#fff"}}
+                        sx={{background: "#FF4500", color: "#fff", mt: 2}}
+                        
                         >
                             Continue
                     </Button>
                     </Link>
+                    
+                    
+
+
+                    
                    
                 </Box>
  
