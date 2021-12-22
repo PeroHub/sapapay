@@ -37,7 +37,7 @@ export default function Signupsuccess () {
   //   }
   // };
 
-  let update = <div style={{display: "flex", marginTop: "15px", marginBottom: "15px"}}>
+  let update = <div style={{display: "flex", marginTop: "15px", marginBottom: "15px", cursor: "pointer"}}>
        <Avatar src={copy} />
        <p style={{fontWeight: "bold"}}>Click to copy</p>
   </div>
