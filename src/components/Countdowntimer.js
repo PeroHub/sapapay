@@ -63,7 +63,7 @@ export default function Countdowntimer() {
         color: "#fff"
     }
     return (
-        <div style={{background: "rgba(0, 0, 0, 0.6)", marginTop: '10px', height: "100vh", backgroundImage: `url(${enter})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundBlendMode: "multiply", display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <div style={{background: "rgba(0, 0, 0, 0.6)", marginTop: '40px', height: "100vh", backgroundImage: `url(${enter})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundBlendMode: "multiply", display: "flex", justifyContent: "center", alignItems: "center"}}>
             <Container component="main" sx={{ mt: -8}}>
             
             {time.length < 1 ? <Box sx={{display: 'flex', alignItems: "center", justifyContent: "center", mt: 8}}><CircularProgress /></Box> : <Box>
