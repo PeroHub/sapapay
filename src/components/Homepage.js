@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom"
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+
+
 
 export default function Homepage() {
     return (
-        <Link to="/count_down">
-        <div style={{textAlign: 'center', marginTop: "100px"}}>Go to countdown</div>
-        </Link>
+        <Container component="main">
+            
+        </Container>
         
     )
 }
