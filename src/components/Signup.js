@@ -1,6 +1,7 @@
 import Container from '@mui/material/Container';
 // import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
+import Alert from '@mui/material/Alert';
 import Typography from '@mui/material/Typography';
 // import Stack from '@mui/material/Stack';
 // import Grid from '@mui/material/Grid';
@@ -11,7 +12,9 @@ import Button from '@mui/material/Button';
 // import Grid from '@mui/material/Grid';
 import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
+import { useAuth } from "../context/auth";
+import { useNavigate } from "react-router";
 
 
 // import sapapay from '../images/sapapay.svg'
@@ -21,28 +24,61 @@ import { Link } from "react-router-dom"
 
 export default function Signup() {
 
-    const [sex, setSex] = useState("")
-
-    const handleSex = (event) => {
-        setSex(event.target.value)
+    const [data, setData] = useState({})
+    const [error, setError] = useState('')
+    const { signup } = useAuth()
+  
+    const navigate = useNavigate()
+  
+  
+    const submit = async function (e) {
+      e.preventDefault()
+      setError('')
+      if (data.username && data.email && data.fullname && data.password) {
+        await signup(data)
+          .then(() => {
+            navigate('/success')
+          })
+          .catch(e => {
+            console.log(e.message)
+            setError(e.message)
+          })
+      } else {
+        setError('input All fields')
+      }
+    }
+  
+    const handleChange = (e) => {
+      setData({ ...data, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        // eslint-disable-next-line no-console
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        });
-      };
+    // const [sex, setSex] = useState("")
+
+    // const handleSex = (event) => {
+    //     setSex(event.target.value)
+    // }
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const data = new FormData(event.currentTarget);
+    //     // eslint-disable-next-line no-console
+    //     console.log({
+    //       email: data.get('email'),
+    //       password: data.get('password'),
+    //     });
+    //   };
 
     return (
             <Container component="main" sx={{minHeight: "85vh"}} maxWidth="sm">
             <Box sx={{border: "1px solid #d3d3d3", p: 2, height: "inherit"}}>
                 <Typography sx={{textAlign: "center", background: "#FF4500", p: 2, fontWeight: "bold", fontSize: "24px", color: "#fff"}}>Sign Up</Typography>
-                
-                <Box  component="form" onSubmit={handleSubmit}>
+             
+                <Box  component="form" onSubmit={submit}>
+                {error && (
+              <Alert severity="error">
+                {error}
+              </Alert>
+            )}
                     <Box sx={{display: "flex", alignItems:"center"}}>
                         <FormControl sx={{m: 1, width: "100%"}}>
                             <Typography sx={{ width: "50%"}}>Username</Typography>
@@ -52,6 +88,7 @@ export default function Signup() {
                             id='username'
                             name="username"
                             type="text"
+                            onChange={handleChange}
                             />
                         </FormControl>
                     </Box>
@@ -65,6 +102,7 @@ export default function Signup() {
                             id='fullname'
                             name="fullname"
                             type="text"
+                            onChange={handleChange}
                             />
                         </FormControl>
                     </Box>
@@ -79,6 +117,7 @@ export default function Signup() {
                             name="password"
                             type="password"
                             autoComplete="current-password"
+                            onChange={handleChange}
                             />
                         </FormControl>
                     </Box>
@@ -109,6 +148,7 @@ export default function Signup() {
                             type="email"
                             autoComplete="email"
                             autoFocus
+                            onChange={handleChange}
                             />
                         </FormControl>
                     </Box>
@@ -118,11 +158,15 @@ export default function Signup() {
                         <Typography>Sex</Typography>
                             <Select
                             sx={{width: '50%'}}
-                            value={sex}
-                            onChange={handleSex}
+                            id='sex'
+                            name='sex'
+                            type='sex'
+                            // value={sex}
+                            // onChange={handleSex}
+                            onChange={handleChange}
                             >
-                            <MenuItem value={10}>MALE</MenuItem>
-                            <MenuItem value={20}>FEMALE</MenuItem>
+                            <MenuItem value="male">MALE</MenuItem>
+                            <MenuItem value="female">FEMALE</MenuItem>
                         
                             </Select>
 
@@ -140,6 +184,7 @@ export default function Signup() {
                             id='brand'
                             name="brand"
                             type="text"
+                            onChange={handleChange}
                             />
                         </FormControl>
                     </Box>
@@ -153,6 +198,7 @@ export default function Signup() {
                             id='number'
                             name="number"
                             type="number"
+                            onChange={handleChange}
                             />
                         </FormControl>
                     </Box>
@@ -169,7 +215,7 @@ export default function Signup() {
                         </FormControl>
                     </Box> */}
               
-                    <Link to="/success" style={{textDecoration: 'none' }}>
+                    {/* <Link to="/success" style={{textDecoration: 'none' }}> */}
                     <Button
                         type="submit"
                         fullWidth
@@ -178,7 +224,7 @@ export default function Signup() {
                         >
                             Continue
                     </Button>
-                    </Link>
+                    {/* </Link> */}
                    
                 </Box>
  
