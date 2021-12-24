@@ -15,7 +15,7 @@ import whatsapp from '../images/footerwhatsapp.svg'
 
 export default function Footer() {
     return (
-        <Box sx={{background: "#FF4500"}}>
+        <Box sx={{background: "#FF4500", mt: 4}}>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={4} md={4}>
                     <Box style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>

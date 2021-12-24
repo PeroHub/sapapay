@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import sapapay from './images/sapapay.svg'
 import telegram from './images/telegram.svg'
@@ -31,7 +32,8 @@ function App() {
                     </Stack>
                 </Link>
           </Box>
-          <Box sx={{mt: 4}}>
+          <MenuIcon sx={{display: {md: "none", sm: "none"}, mt: 5}} />
+          <Box sx={{mt: 4, display: {xs: "none", md: "block"}}}>
             <Stack direction="row">
               <Button>Login</Button>
               <Button>Sign Up</Button>
