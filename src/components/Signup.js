@@ -2,6 +2,7 @@ import Container from "@mui/material/Container";
 // import Avatar from '@mui/material/Avatar';
 import Box from "@mui/material/Box";
 import Alert from "@mui/material/Alert";
+import { Link } from "react-router-dom"
 import Typography from "@mui/material/Typography";
 // import Stack from '@mui/material/Stack';
 // import Grid from '@mui/material/Grid';
@@ -15,6 +16,7 @@ import { useState } from "react";
 // import { Link } from "react-router-dom"
 import { useAuth } from "../context/auth";
 import { useNavigate } from "react-router";
+import CloseIcon from '@mui/icons-material/Close';
 
 import { countryArray } from './countries'
 // import sapapay from '../images/sapapay.svg'
@@ -68,7 +70,10 @@ export default function Signup() {
 
   return (
     <Container component="main" sx={{ minHeight: "85vh" }} maxWidth="sm">
-      <Box sx={{ border: "1px solid #d3d3d3", p: 2, height: "inherit" }}>
+      <Link to="/">
+      <CloseIcon sx={{ mt: 3, color: "#FF4500", position: "relative", left: {md: "600px", sm: "400px" , xs: "30 0px"}}} />
+      </Link>
+      <Box sx={{ border: "1px solid #d3d3d3",mt: 4, p: 2, height: "inherit" }}>
         <Typography
           sx={{
             textAlign: "center",
