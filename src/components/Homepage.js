@@ -180,7 +180,7 @@ export default function Homepage() {
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6} sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <Box sx={{width: "400px", height: "300px"}}>
+                        <Box sx={{width: {xs: "300px", md: "400px"}, height: "300px"}}>
                             <Avatar src={peer} alt="peer to peer" sx={{width: 'inherit', height: "inherit"}} />
                         </Box>
                     </Grid>
@@ -243,8 +243,8 @@ export default function Homepage() {
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6} sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <Box >
-                            <img src={payment} alt="transaction" sx={{width: {xs: "300px", height: {xs: "200px"}}}} />
+                        <Box sx={{display: {xs: "none",sm: "block", md: "block"}}}>
+                            <img src={payment} alt="transaction"/>
                         </Box>
                     </Grid>
                 </Grid>
