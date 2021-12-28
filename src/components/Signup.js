@@ -69,7 +69,7 @@ export default function Signup() {
   //   };
 
   return (
-    <Container component="main" sx={{ minHeight: "85vh" }} maxWidth="sm">
+    <Container component="main" sx={{ minHeight: "85vh" }} maxWidth="sm"> 
       <Link to="/">
       <CloseIcon sx={{ mt: 3, color: "#FF4500", position: "relative", left: {md: "600px", sm: "400px" , xs: "30 0px"}}} />
       </Link>

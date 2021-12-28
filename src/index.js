@@ -13,6 +13,7 @@ import Signup from "./components/Signup";
 import Countdowntimer from "./components/Countdowntimer";
 import Homepage from "./components/Homepage";
 import Signupsuccess from "./components/Signupsuccess";
+import Listing from "./components/Listing"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.render(
               <Route path="" element={<Homepage />} />
               <Route path="count_down" element={<Countdowntimer />} />
               <Route path="signup" element={<Signup />} />
+              <Route path="listing" element={<Listing />} />
               <Route path="success" element={<Signupsuccess />} />
             </Route>
           </Routes>
