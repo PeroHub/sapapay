@@ -243,8 +243,8 @@ export default function Homepage() {
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6} sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <Box>
-                            <img src={payment} alt="transaction" sx={{}} />
+                        <Box >
+                            <img src={payment} alt="transaction" sx={{width: {xs: "300px", height: {xs: "200px"}}}} />
                         </Box>
                     </Grid>
                 </Grid>
