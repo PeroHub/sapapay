@@ -13,6 +13,8 @@ import Signup from "./components/Signup";
 import Countdowntimer from "./components/Countdowntimer";
 import Homepage from "./components/Homepage";
 import Signupsuccess from "./components/Signupsuccess";
+import Listing from "./components/Listing"
+import Farming from "./category/Farming";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,7 +26,19 @@ ReactDOM.render(
               <Route path="" element={<Homepage />} />
               <Route path="count_down" element={<Countdowntimer />} />
               <Route path="signup" element={<Signup />} />
+              <Route path="listing" element={<Listing />}>
+                
+              </Route>
+              <Route path="listing/farming" element={<Farming />} />
               <Route path="success" element={<Signupsuccess />} />
+              <Route
+                path="*"
+                element={
+                  <main style={{ padding: "1rem" }}>
+                    <p>There's nothing here!</p>
+                  </main>
+                }
+              />
             </Route>
           </Routes>
         </AuthProvider>

@@ -2,6 +2,7 @@ import Container from "@mui/material/Container";
 // import Avatar from '@mui/material/Avatar';
 import Box from "@mui/material/Box";
 import Alert from "@mui/material/Alert";
+import { Link } from "react-router-dom"
 import Typography from "@mui/material/Typography";
 // import Stack from '@mui/material/Stack';
 // import Grid from '@mui/material/Grid';
@@ -15,7 +16,9 @@ import { useState } from "react";
 // import { Link } from "react-router-dom"
 import { useAuth } from "../context/auth";
 import { useNavigate } from "react-router";
+import CloseIcon from '@mui/icons-material/Close';
 
+import { countryArray } from './countries'
 // import sapapay from '../images/sapapay.svg'
 // import Vector from '../images/Vector.png'
 
@@ -36,7 +39,11 @@ export default function Signup() {
           navigate("/success");
         })
         .catch((e) => {
+<<<<<<< HEAD
         //   console.log(e.message);
+=======
+          console.log(e);
+>>>>>>> bb21f86fd391d006aa1ce6006d15fa09f16e01e9
           setError(e.message);
         });
     } else {
@@ -48,6 +55,8 @@ export default function Signup() {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
+  let countryValue = countryArray()
+  console.log(countryValue[0])
   // const [sex, setSex] = useState("")
 
   // const handleSex = (event) => {
@@ -65,8 +74,11 @@ export default function Signup() {
   //   };
 
   return (
-    <Container component="main" sx={{ minHeight: "85vh" }} maxWidth="sm">
-      <Box sx={{ border: "1px solid #d3d3d3", p: 2, height: "inherit" }}>
+    <Container component="main" sx={{ minHeight: "85vh" }} maxWidth="sm"> 
+      <Link to="/">
+      <CloseIcon sx={{ mt: 3, color: "#FF4500", position: "relative", left: {md: "600px", sm: "400px" , xs: "300px"}}} />
+      </Link>
+      <Box sx={{ border: "1px solid #d3d3d3",mt: 4, p: 2, height: "inherit" }}>
         <Typography
           sx={{
             textAlign: "center",
@@ -168,6 +180,25 @@ export default function Signup() {
               >
                 <MenuItem value="male">MALE</MenuItem>
                 <MenuItem value="female">FEMALE</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+
+          <Box sx={{ display: "flex", alignItems: "center" }} component="form">
+            <FormControl sx={{ m: 1, width: "100%" }}>
+              <Typography>Country</Typography>
+              <Select
+                sx={{ width: "50%" }}
+                id="sex"
+                name="sex"
+                type="sex"
+                // value={sex}
+                // onChange={handleSex}
+                onChange={handleChange}
+              >
+                { countryValue.map((country)=>{
+                  return <MenuItem value={country}> {country} </MenuItem>
+                }) }
               </Select>
             </FormControl>
           </Box>
