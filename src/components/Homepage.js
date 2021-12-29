@@ -172,7 +172,7 @@ export default function Homepage() {
                 <Grid container spacing={2} alignItem="center" justifyContent="center">
                     <Grid item xs={12} md={6}>
                         <Box sx={{ height: "300px",display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-                            <Typography sx={{fontWeight: "bold", fontSize: "1.2rem"}}>Ads and Listing</Typography>
+                            <Typography sx={{fontWeight: "bold", fontSize: "1.2rem"}}>Market Place</Typography>
                             <Typography sx={{ p: 2}}>Sapapay helps to list  your business. For experienced users, the building of a simple advertising model takes less than an hour.
                               In the case of positioning the website, the effects are not so fast.
                               They are visible even after a few weeks. 
@@ -235,7 +235,7 @@ export default function Homepage() {
                 <Grid container spacing={2} alignItem="center" justifyContent="center">
                     <Grid item xs={12} md={6}>
                         <Box sx={{ height: "300px",display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-                            <Typography sx={{fontWeight: "bold", fontSize: "1.2rem"}}>Ads and Listing</Typography>
+                            <Typography sx={{fontWeight: "bold", fontSize: "1.2rem"}}>Peer To Peer Payment  </Typography>
                             <Typography sx={{ p: 2}}>Sapapay helps to list  your business. For experienced users, the building of a simple advertising model takes less than an hour.
                               In the case of positioning the website, the effects are not so fast.
                               They are visible even after a few weeks. 
