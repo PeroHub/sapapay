@@ -44,7 +44,7 @@ export default function Farming () {
                 <h1 style={{textAlign: "center", color: "rgb(148, 143, 143)"}}>Farming Category</h1>
                 
            </Box>
-           <Box sx={{backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", width: "750px", height: "350px"}} style={{margin: "0 auto"}}>
+           <Box sx={{backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", width: {xs: "300px", sm: "500px", md: "750px"}, height: {md: "350px", xs: "150px"}}} style={{margin: "0 auto"}}>
                <img src={farm} alt="farm" style={{width: "100%", height: "inherit"}} />
            </Box>
 
@@ -163,9 +163,7 @@ export default function Farming () {
                 </Grid>
             </Box>
             <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open alert dialog
-      </Button>
+    
       <Dialog
         open={open}
         onClose={handleClose}
