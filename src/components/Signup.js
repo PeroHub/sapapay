@@ -39,11 +39,7 @@ export default function Signup() {
           navigate("/success");
         })
         .catch((e) => {
-<<<<<<< HEAD
-        //   console.log(e.message);
-=======
           console.log(e);
->>>>>>> bb21f86fd391d006aa1ce6006d15fa09f16e01e9
           setError(e.message);
         });
     } else {
