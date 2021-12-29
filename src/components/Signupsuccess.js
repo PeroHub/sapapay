@@ -13,12 +13,16 @@ import telegram from '../images/telegram.svg'
 import whatsapp from '../images/whatsapp.svg'
 import { useState } from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { useAuth } from '../context/auth'
 
 
 export default function Signupsuccess () {
 
     const [copySuccess, setCopySuccess] = useState(false);
     const [link, setLink] = useState("https://gfygefhgfgyfgajhfvfg")
+
+    const currentUser = useAuth()
+    console.log(currentUser.email)
 
     console.log("this is" + link)
     let handleLink = (event) => {
@@ -53,6 +57,7 @@ export default function Signupsuccess () {
                     <Grid item xs={12} md={12}>
                     <Box sx={{ justifyContent: "center", alignItems: "center"}}>
                     <Typography  sx={{color: "#9ca3af"}}>Refer your friends</Typography>
+                    <Typography  sx={{color: "#9ca3af"}}>{currentUser.username}</Typography>
                     <TextField 
                          
                          fullWidth

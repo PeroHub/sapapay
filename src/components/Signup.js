@@ -32,10 +32,11 @@ export default function Signup() {
     if (data.username && data.email && data.fullname && data.password) {
       await signup(data)
         .then(() => {
+            // console.log(data)
           navigate("/success");
         })
         .catch((e) => {
-          console.log(e.message);
+        //   console.log(e.message);
           setError(e.message);
         });
     } else {
