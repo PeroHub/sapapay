@@ -21,8 +21,11 @@ export default function Signupsuccess () {
     const [copySuccess, setCopySuccess] = useState(false);
     const [link, setLink] = useState("https://gfygefhgfgyfgajhfvfg")
 
-    const currentUser = useAuth()
+    const {currentUser} = useAuth() // login or signup first 
     console.log(currentUser.email)
+    console.log("Current user ---> ", currentUser )
+    
+    console.log("Sessions user ---> ", sessionStorage.getitem('user') ) // this one might have errors 
 
     console.log("this is" + link)
     let handleLink = (event) => {
