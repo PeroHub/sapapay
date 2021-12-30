@@ -17,21 +17,24 @@ import { useState } from "react";
 import { useAuth } from "../context/auth";
 import { useNavigate } from "react-router";
 import CloseIcon from '@mui/icons-material/Close';
-
+import CircularProgress from "@mui/material/CircularProgress";
 import { countryArray } from './countries'
 // import sapapay from '../images/sapapay.svg'
 // import Vector from '../images/Vector.png'
 
 export default function Signup() {
   const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { signup } = useAuth();
+  
 
   const navigate = useNavigate();
 
   const submit = async function (e) {
     e.preventDefault();
     setError("");
+    setLoading(true)
     if (data.username && data.email && data.fullname && data.password) {
       await signup(data)
         .then(() => {
@@ -44,6 +47,7 @@ export default function Signup() {
     } else {
       setError("input All fields");
     }
+    setLoading(false)
   };
 
   const handleChange = (e) => {
@@ -239,15 +243,15 @@ export default function Signup() {
                         </FormControl>
                     </Box> */}
 
-          {/* <Link to="/success" style={{textDecoration: 'none' }}> */}
-          <Button
+          {loading ? <div className="text-center"> <CircularProgress size={30} /></div> : <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ background: "#FF4500", color: "#fff" }}
           >
             Continue
-          </Button>
+          </Button>}
+          
           {/* </Link> */}
         </Box>
       </Box>
