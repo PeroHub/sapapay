@@ -169,7 +169,7 @@ export default function Signup() {
                 sx={{ width: "50%" }}
                 id="sex"
                 name="sex"
-                type="sex"
+                type="text"
                 // value={sex}
                 // onChange={handleSex}
                 onChange={handleChange}
@@ -185,9 +185,9 @@ export default function Signup() {
               <Typography>Country</Typography>
               <Select
                 sx={{ width: "50%" }}
-                id="sex"
-                name="sex"
-                type="sex"
+                id="country"
+                name="country"
+                type="text"
                 // value={sex}
                 // onChange={handleSex}
                 onChange={handleChange}
@@ -223,6 +223,19 @@ export default function Signup() {
                 id="number"
                 name="number"
                 type="number"
+                onChange={handleChange}
+              />
+            </FormControl>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <FormControl sx={{ m: 1, width: "100%" }}>
+              <Typography sx={{ width: "50%" }}>Referral ID</Typography>
+              <TextField
+                sx={{ width: "100%" }}
+                required
+                id="referral"
+                name="referral"
+                type="text"
                 onChange={handleChange}
               />
             </FormControl>

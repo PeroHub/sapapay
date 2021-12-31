@@ -19,15 +19,16 @@ import { useAuth } from '../context/auth'
 export default function Signupsuccess () {
 
     const [copySuccess, setCopySuccess] = useState(false);
-    const [link, setLink] = useState("https://gfygefhgfgyfgajhfvfg")
+    
 
     const {currentUser} = useAuth() // login or signup first 
-    console.log(currentUser.email)
+    // console.log(currentUser.email)
     console.log("Current user ---> ", currentUser )
+    const [link, setLink] = useState(currentUser.username)
     
-    console.log("Sessions user ---> ", sessionStorage.getitem('user') ) // this one might have errors 
+    // console.log("Sessions user ---> ", sessionStorage.getitem('user') ) // this one might have errors 
 
-    console.log("this is" + link)
+    console.log("this is " + link)
     let handleLink = (event) => {
         setLink(event.target.value)
     }
@@ -60,7 +61,6 @@ export default function Signupsuccess () {
                     <Grid item xs={12} md={12}>
                     <Box sx={{ justifyContent: "center", alignItems: "center"}}>
                     <Typography  sx={{color: "#9ca3af"}}>Refer your friends</Typography>
-                    <Typography  sx={{color: "#9ca3af"}}>{currentUser.username}</Typography>
                     <TextField 
                          
                          fullWidth
