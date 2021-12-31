@@ -25,7 +25,8 @@ export const registerApi = async (data) => {
     try {
         const response = await axios.post(URL + '/signup', data)
         if(response.status === 200){
-            return true
+            storage.writeData(response.data)
+            return storage.getUser()
         }
         parseError(response)
     } catch (e) {

@@ -13,14 +13,22 @@ import telegram from '../images/telegram.svg'
 import whatsapp from '../images/whatsapp.svg'
 import { useState } from 'react';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { useAuth } from '../context/auth'
 
 
 export default function Signupsuccess () {
 
     const [copySuccess, setCopySuccess] = useState(false);
-    const [link, setLink] = useState("https://gfygefhgfgyfgajhfvfg")
+    
 
-    console.log("this is" + link)
+    const {currentUser} = useAuth() // login or signup first 
+    // console.log(currentUser.email)
+    console.log("Current user ---> ", currentUser )
+    const [link, setLink] = useState(currentUser.username)
+    
+    // console.log("Sessions user ---> ", sessionStorage.getitem('user') ) // this one might have errors 
+
+    console.log("this is " + link)
     let handleLink = (event) => {
         setLink(event.target.value)
     }
