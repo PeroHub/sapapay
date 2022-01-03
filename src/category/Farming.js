@@ -38,7 +38,7 @@ export default function Farming () {
     return (
         <Container sx={{}}>
               <Link to="/listing">
-                <CloseIcon sx={{ mt: 3, color: "#FF4500", position: "relative", left: {md: "1000px", sm: "400px" , xs: "300px"}}} />
+                <CloseIcon sx={{ mt: 3, color: "#FF4500", position: "relative", left: {md: "1000px", sm: "500px" , xs: "220px"}}} />
             </Link>
            <Box sx={{ mt: 4}}>
                 <h1 style={{textAlign: "center", color: "rgb(148, 143, 143)"}}>Farming Category</h1>
