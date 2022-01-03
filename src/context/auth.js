@@ -15,7 +15,9 @@ export function AuthProvider({ children }) {
     const response = await registerApi(data)
     if (response.error) {
       throw new Error(response.error.message.message ?? response.error.message ?? 'Error occured')
-    }
+    } 
+       setCurrentUser(response)
+
     return response
   }
 
