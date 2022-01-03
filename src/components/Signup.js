@@ -236,7 +236,6 @@ export default function Signup() {
               <Typography sx={{ width: "50%" }}>Referral ID</Typography>
               <TextField
                 sx={{ width: "100%" }}
-                required
                 id="referral"
                 name="referral"
                 type="text"
