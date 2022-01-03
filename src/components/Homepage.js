@@ -89,7 +89,10 @@ export default function Homepage() {
               <Link to="/signup" style={{textDecoration: "none"}}>
                 <Button>Sign Up</Button>
               </Link>
-              <Button>About US</Button>
+              <Link to="/about_us" style={{textDecoration: "none"}}>
+                <Button>About US</Button>
+              </Link>
+              
               <Link to="/listing"style={{textDecoration: "none"}} >
                 <Button>Listing Page</Button>
               </Link>

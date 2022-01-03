@@ -16,7 +16,7 @@ import Signupsuccess from "./components/Signupsuccess";
 import Listing from "./components/Listing"
 import Farming from "./category/Farming";
 import Login from "./components/Login"
-
+import Aboutus from  "./components/Aboutus"
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -28,6 +28,7 @@ ReactDOM.render(
               <Route path="count_down" element={<Countdowntimer />} />
               <Route path="signup" element={<Signup />} />
               <Route path="login" element={<Login />} />
+              <Route path="about_us" element={<Aboutus />} />
               <Route path="listing" element={<Listing />}>
                 
               </Route>
